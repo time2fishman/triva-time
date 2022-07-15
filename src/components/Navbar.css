@@ -1,0 +1,15 @@
+#navbar {
+    border-bottom: solid #a60101 5px;
+    font-size: 18px;
+    padding: 1rem 0 1rem 0;
+}
+
+.nav-home {
+    margin: 2em;
+    text-decoration: none;
+}
+
+#toggle {
+    vertical-align: middle;
+    margin-left: 1em;
+}
