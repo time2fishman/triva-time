@@ -1,5 +1,5 @@
 main {
-    background-color: #caf5ab;
+    /* background-color: #caf5ab; */
     font-family: Quicksand, sans-serif;
     text-align: center;
 }
@@ -27,13 +27,13 @@ h1 {
 }
 
 #difficulty {
-    background-color: #caf5ab;
+    background-color: #f2ffe7;
     padding: 5px;
     margin: 5px;
 }
 
 #category {
-    background-color: #caf5ab;
+    background-color: #f2ffe7;
     padding: 5px;
     margin: 5px;
 }

@@ -1,6 +1,7 @@
 #navbar {
-    border-bottom: solid #a60101 5px;
+    border-bottom: solid #1d860d 2px;
     font-size: 18px;
+    font-weight: 700;
     padding: 1rem 0 1rem 0;
     font-family: Quicksand, sans-serif;
 }
