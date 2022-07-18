@@ -4,6 +4,8 @@ import GameSelections from './GameSelections';
 import Navbar from './Navbar';
 import Play from './Play';
 import Questions from './Questions';
+import { Routes, Route, Link, useSearchParams } from 'react-router-dom'
+
 
 function App() {
   return (

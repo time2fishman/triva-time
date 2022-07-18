@@ -6,7 +6,7 @@ function Navbar() {
         <header>
             <nav id="navbar">
                 <a href="#" className="nav-home">Home</a>
-                <label htmlFor="toggle" className="toggle-label">DarkMode</label>
+                <label htmlFor="toggle" className="toggle-label">Dark Mode</label>
                 <input type='checkbox' id="toggle" />
             </nav>
         </header>

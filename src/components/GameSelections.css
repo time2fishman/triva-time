@@ -1,12 +1,45 @@
+main {
+    background-color: #caf5ab;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+}
+
 .logo {
     display: block;
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
 
 h1 {
-    font-family: 'Mystery Quest';
+    font-family: Peralta, sans-serif;
     font-size: 35px;
     text-align: center;
+}
+
+.difficulty-label {
+    font-weight: 900;
+}
+
+.category-label {
+    font-weight: 900;
+}
+
+#difficulty {
+    background-color: #caf5ab;
+    padding: 5px;
+    margin: 5px;
+}
+
+#category {
+    background-color: #caf5ab;
+    padding: 5px;
+    margin: 5px;
+}
+
+.play-button {
+    background-color: #74e324;
+    padding: 5px 75px 5px 75px;
+    margin: 10px;
 }
