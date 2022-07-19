@@ -1,44 +1,28 @@
-import './GameSelections.css'
+import './Home.css'
 import logo from '../TriviaLogo.png'
 import { useState, useEffect } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function GameSelections() {
-    const [difficulty, setDifficulty] = useState()
-    console.log(difficulty)
-    const [category, setCategory] = useState()
-    console.log(category)
+function Home(props) {
+
 
     function handleDifficultyChange(event) {
-        setDifficulty(event.target.value)
-        console.log(difficulty)
+        props.setDifficulty(event.target.value)
+        console.log(props.difficulty)
     }
 
     function handleCategoryChange(event) {
-        setCategory(event.target.value)
-        console.log(category)
+        props.setCategory(event.target.value)
+        console.log(props.category)
     }
 
-    function handleSubmit(event) {
-        const url = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&category=${category}`
-        event.preventDefault()
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-            })
-        // fetch(`https://opentdb.com/api.php?amount=10&category=${category}`)
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         console.log(res)
-        //     })
-    }
+
 
     return (
         <main>
             <img src={logo} alt="Trivia Logo" className='logo' />
             <h1>Welcome to Trivia Time</h1>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <label htmlFor='difficulty' className='difficulty-label'>First, choose your difficulty level</label>
                 <br />
                 <select onChange={handleDifficultyChange} id='difficulty'>
@@ -66,13 +50,13 @@ function GameSelections() {
                     <option value="28">Vehicles</option>
                 </select>
                 <br />
-                <button type='submit' className='play-button'>Play</button>
+                <Link to='/play'><button type='submit' className='play-button'>Play</button></Link>
             </form>
         </main>
     )
 }
 
-export default GameSelections
+export default Home
 
 // {
 //     "trivia_categories": [
