@@ -2,18 +2,20 @@ import './Home.css'
 import logo from '../TriviaLogo.png'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Select from 'react-select'
 
-function Home(props) {
+
+function Home({setDifficulty, setCategory, category, difficulty}) {
 
 
     function handleDifficultyChange(event) {
-        props.setDifficulty(event.target.value)
-        console.log(props.difficulty)
+        setDifficulty(event.target.value)
+        console.log(difficulty)
     }
 
     function handleCategoryChange(event) {
-        props.setCategory(event.target.value)
-        console.log(props.category)
+        setCategory(event.target.value)
+        console.log(category)
     }
 
 

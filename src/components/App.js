@@ -10,9 +10,9 @@ import { Routes, Route, Link, useSearchParams } from 'react-router-dom'
 
 function App() {
   const [difficulty, setDifficulty] = useState()
-  // console.log(difficulty)
+  console.log(difficulty)
   const [category, setCategory] = useState()
-  // console.log(category)
+  console.log(category)
 
   return (
     <div className="App">
