@@ -1,4 +1,4 @@
-h1 {
+h2 {
     text-align: center;
 }
 
@@ -12,6 +12,7 @@ h1 {
 
 .question-box {
     text-align: center;
+    margin: 10vh;
 }
 
 .question {

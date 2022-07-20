@@ -1,5 +1,5 @@
 import './Home.css'
-import logo from '../TriviaLogo.png'
+import logo from '../img/TriviaLogo.png'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'

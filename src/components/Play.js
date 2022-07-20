@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Play.css'
+import { Link } from 'react-router-dom'
 
 function Play({ difficulty, category }) {
     const [results, setResults] = useState([])
@@ -36,17 +37,17 @@ function Play({ difficulty, category }) {
     if (userAnswer === results[0].correct_answer) {
         return (
             <div className='test'>
-                <h1>Correct!</h1>
-                <button className='next-question' type='submit' onClick={getResults}>Next Question</button>
+                <h2>Correct!</h2>
+                <button className='next-question' type='button' onClick={getResults}>Next Question</button> 
             </div>
         )
     }
-    
+
     if (userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) {
         return (
             <div className='test'>
-                <h1>Incorrect, better luck next time.</h1>
-                <button className='next-question' type='submit' onClick={getResults}>Next Question</button>
+                <h2>Incorrect, better luck next time.</h2>
+                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
             </div>
         )
     }
@@ -56,24 +57,28 @@ function Play({ difficulty, category }) {
     // console.log(result.incorrect_answers)
 
     return (
-        <div className='question-box'>
+        <main className='question-box'>
             {results.map((result, i) => {
                 return (
                     <>
                         <p className='question' dangerouslySetInnerHTML={{ __html: result.question }}></p>
-                        <input onChange={handleAnswer} type='radio' id='correctAnswer' name='correctAnswer' value={result.correct_answer} />
-                        <label htmlFor='correctAnswer' dangerouslySetInnerHTML={{ __html: result.correct_answer }}></label>
+                        <div className='possible-answers'>
+                            <div className='choice'>
+                                <input className='answer' onChange={handleAnswer} type='radio' id='correctAnswer' name='correctAnswer' value={result.correct_answer} />
+                                <label className='answers' htmlFor='correctAnswer' dangerouslySetInnerHTML={{ __html: result.correct_answer }}></label>
+                            </div>
 
-                        {result.incorrect_answers.map((incorrectAnswer) => (
-                            <>
-                                <input onChange={handleAnswer} type='radio' id='incorrectAnswer' name='incorrectAnswer' value={incorrectAnswer} />
-                                <label htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
-                            </>
-                        ))}
+                            {result.incorrect_answers.map((incorrectAnswer) => (
+                                <div className='choice'>
+                                    <input className='answers' onChange={handleAnswer} type='radio' id='incorrectAnswer' name='incorrectAnswer' value={incorrectAnswer} />
+                                    <label className='answers' htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
+                                </div>
+                            ))}
+                        </div>
                     </>
                 )
             })}
-        </div>
+        </main>
     )
 }
 
