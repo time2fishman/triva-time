@@ -10,12 +10,12 @@ function Home({setDifficulty, setCategory, category, difficulty}) {
 
     function handleDifficultyChange(event) {
         setDifficulty(event.target.value)
-        console.log(difficulty)
+        // console.log(difficulty)
     }
 
     function handleCategoryChange(event) {
         setCategory(event.target.value)
-        console.log(category)
+        // console.log(category)
     }
 
 

@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react'
+import './Play.css'
 
 function Play({ difficulty, category }) {
     const [results, setResults] = useState([])
     const [userAnswer, setUserAnswer] = useState([])
 
-    function rightAnswer(event) {
+    function handleAnswer(event) {
         setUserAnswer(event.target.value)
-        console.log(userAnswer)
+        // console.log(userAnswer)
     }
 
-    console.log(results)
-    console.log(difficulty)
-    console.log(category)
+    // console.log(results)
+    // console.log(difficulty)
+    // console.log(category)
     function getResults() {
         const url = `https://opentdb.com/api.php?amount=1&difficulty=${difficulty}&category=${category}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setResults(data.results)
             })
             .catch((err) => err)
@@ -34,8 +35,18 @@ function Play({ difficulty, category }) {
 
     if (userAnswer === results[0].correct_answer) {
         return (
-            <div>
+            <div className='test'>
                 <h1>Correct!</h1>
+                <button className='next-question' type='submit' onClick={getResults}>Next Question</button>
+            </div>
+        )
+    }
+    
+    if (userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) {
+        return (
+            <div className='test'>
+                <h1>Incorrect, better luck next time.</h1>
+                <button className='next-question' type='submit' onClick={getResults}>Next Question</button>
             </div>
         )
     }
@@ -45,27 +56,20 @@ function Play({ difficulty, category }) {
     // console.log(result.incorrect_answers)
 
     return (
-        <div>
+        <div className='question-box'>
             {results.map((result, i) => {
                 return (
                     <>
-                        <p><span>{i + 1}</span><span>. </span><span dangerouslySetInnerHTML={{ __html: result.question }}></span></p>
-                        <input onChange={rightAnswer} type='radio' id='correctAnswer' name='correctAnswer' value={result.correct_answer} />
+                        <p className='question' dangerouslySetInnerHTML={{ __html: result.question }}></p>
+                        <input onChange={handleAnswer} type='radio' id='correctAnswer' name='correctAnswer' value={result.correct_answer} />
                         <label htmlFor='correctAnswer' dangerouslySetInnerHTML={{ __html: result.correct_answer }}></label>
 
                         {result.incorrect_answers.map((incorrectAnswer) => (
                             <>
-                                <input type='radio' id='incorrectAnswer' name='incorrectAnswer' value={incorrectAnswer} />
-                                <label htmlFor='incorrectAnswer'>{incorrectAnswer}</label>
+                                <input onChange={handleAnswer} type='radio' id='incorrectAnswer' name='incorrectAnswer' value={incorrectAnswer} />
+                                <label htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
                             </>
                         ))}
-
-                        {/* <input type='radio' id='incorrectAnswer' name='incorrectAnswer' value={result.incorrect_answers[0]} />
-                        <label htmlFor='incorrectAnswer'>{result.incorrect_answers[0]}</label>
-                        <input type='radio' id='incorrectAnswer' name='incorrectAnswer' value={result.incorrect_answers[1]} />
-                        <label htmlFor='incorrectAnswer'>{result.incorrect_answers[1]}</label>
-                        <input type='radio' id='incorrectAnswer' name='incorrectAnswer' value={result.incorrect_answers[2]} />
-                        <label htmlFor='incorrectAnswer'>{result.incorrect_answers[2]}</label> */}
                     </>
                 )
             })}

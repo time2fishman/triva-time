@@ -6,7 +6,7 @@ function Navbar() {
         // console.log('Navbar is hooked up!')
         <header>
             <nav id="navbar">
-                <Link to='/' href="#" className="nav-home">Home</Link>
+                <Link to='/' className="nav-home">Home</Link>
                 <label htmlFor="toggle" className="toggle-label">Dark Mode</label>
                 <input type='checkbox' id="toggle" />
             </nav>

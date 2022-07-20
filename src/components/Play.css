@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+.test {
+    text-align: center;
+}
+
+.next-question {
+    background-color: #f2ffe7;
+}
+
+.question-box {
+    text-align: center;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: 500;
+}
