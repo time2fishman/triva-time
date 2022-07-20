@@ -26,6 +26,7 @@ function Play({ difficulty, category }) {
 
     useEffect(() => {
         getResults()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     // console.log(aresults[1].question)
 
@@ -37,7 +38,7 @@ function Play({ difficulty, category }) {
         return (
             <div className='test'>
                 <h2>Correct!</h2>
-                <button className='next-question' type='button' onClick={getResults}>Next Question</button> 
+                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
             </div>
         )
     }
