@@ -1,11 +1,8 @@
 import './Home.css'
 import logo from '../img/TriviaLogo.png'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Select from 'react-select'
 
-
-function Home({setDifficulty, setCategory, category, difficulty}) {
+function Home({setDifficulty, setCategory}) {
 
 
     function handleDifficultyChange(event) {

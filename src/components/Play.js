@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './Play.css'
-import { Link } from 'react-router-dom'
 
 function Play({ difficulty, category }) {
     const [results, setResults] = useState([])

@@ -3,8 +3,7 @@ import './App.css';
 import Home from './Home';
 import Navbar from './Navbar';
 import Play from './Play';
-import Questions from './Questions';
-import { Routes, Route, Link, useSearchParams } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home difficulty={difficulty} setDifficulty={setDifficulty} category={category} setCategory={setCategory} />} />
         <Route path='/play' element={<Play difficulty={difficulty} category={category} />} />
-        {/* <Questions /> */}
       </Routes>
     </div>
   );
