@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import './Play.css'
+import { Navigate } from 'react-router-dom'
 
 function Play({ difficulty, category }) {
     const [results, setResults] = useState([])
-    const [userAnswer, setUserAnswer] = useState([])
+    const [userAnswer, setUserAnswer] = useState()
 
     function handleAnswer(event) {
         setUserAnswer(event.target.value)
@@ -30,27 +31,31 @@ function Play({ difficulty, category }) {
     }, [])
     // console.log(aresults[1].question)
 
+    if (!difficulty) {
+        return <Navigate to='/' />
+    }
+
     if (results.length === 0) {
         return <p>Loading...</p>
     }
 
-    if (userAnswer === results[0].correct_answer) {
-        return (
-            <div className='test'>
-                <h2>Correct!</h2>
-                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
-            </div>
-        )
-    }
+    // if (userAnswer === results[0].correct_answer) {
+    //     return (
+    //         <div className='test'>
+    //             <h2>Correct!</h2>
+    //             <button className='next-question' type='button' onClick={getResults}>Next Question</button>
+    //         </div>
+    //     )
+    // }
 
-    if (userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) {
-        return (
-            <div className='test'>
-                <h2>Incorrect, better luck next time.</h2>
-                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
-            </div>
-        )
-    }
+    // if (userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) {
+    //     return (
+    //         <div className='test'>
+    //             <h2>Incorrect, better luck next time.</h2>
+    //             <button className='next-question' type='button' onClick={getResults}>Next Question</button>
+    //         </div>
+    //     )
+    // }
 
     // console.log("loop " + i)
     // console.log(results.length)
@@ -60,7 +65,7 @@ function Play({ difficulty, category }) {
         <main className='question-box'>
             {results.map((result, i) => {
                 return (
-                    <>
+                    <div key={i}>
                         <p className='question' dangerouslySetInnerHTML={{ __html: result.question }}></p>
                         <div className='possible-answers'>
                             <div className='choice'>
@@ -74,8 +79,16 @@ function Play({ difficulty, category }) {
                                     <label className='answers' htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
                                 </div>
                             ))}
+                            {(userAnswer === results[0].correct_answer) && <div className='test'>
+                                <h2>Correct!</h2>
+                                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
+                            </div>}
+                            {(userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) && <div className='test'>
+                                <h2>Incorrect, better luck next time.</h2>
+                                <button className='next-question' type='button' onClick={getResults}>Next Question</button>
+                            </div>}
                         </div>
-                    </>
+                    </div>
                 )
             })}
         </main>

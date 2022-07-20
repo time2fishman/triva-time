@@ -3,7 +3,7 @@ import './App.css';
 import Home from './Home';
 import Navbar from './Navbar';
 import Play from './Play';
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
