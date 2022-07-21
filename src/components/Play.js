@@ -38,7 +38,7 @@ function Play({ difficulty, category }) {
         <main className='question-box'>
             {results.map((result, i) => {
                 return (
-                    <div key={i}>
+                    <div key={`correctKey:${i}`}>
                         <p className='question' dangerouslySetInnerHTML={{ __html: result.question }}></p>
                         <div className='possible-answers'>
                             <div className='choice'>
@@ -46,17 +46,17 @@ function Play({ difficulty, category }) {
                                 <label className='answers' htmlFor='correctAnswer' dangerouslySetInnerHTML={{ __html: result.correct_answer }}></label>
                             </div>
 
-                            {result.incorrect_answers.map((incorrectAnswer) => (
-                                <div className='choice'>
+                            {result.incorrect_answers.map((incorrectAnswer, i) => (
+                                <div key={`incorrectKey:${i}`} className='choice'>
                                     <input className='answers' onChange={handleAnswer} type='radio' id='incorrectAnswer' name='incorrectAnswer' value={incorrectAnswer} />
                                     <label className='answers' htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
                                 </div>
                             ))}
-                            {(userAnswer === results[0].correct_answer) && <div className='test'>
+                            {(userAnswer === results[0].correct_answer) && <div className='next-question'>
                                 <h2>Correct!</h2>
                                 <button className='next-question' type='button' onClick={getResults}>Next Question</button>
                             </div>}
-                            {(userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) && <div className='test'>
+                            {(userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) && <div className='next-question'>
                                 <h2>Incorrect, better luck next time.</h2>
                                 <button className='next-question' type='button' onClick={getResults}>Next Question</button>
                             </div>}

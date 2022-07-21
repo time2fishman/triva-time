@@ -3,12 +3,13 @@ import './Navbar.css'
 
 function Navbar() {
     return (
-        // console.log('Navbar is hooked up!')
         <header>
             <nav id="navbar">
-                <Link to='/' className="nav-home">Home</Link>
-                <label htmlFor="toggle" className="toggle-label">Dark Mode</label>
-                <input type='checkbox' id="toggle" />
+                <ul id="nav-list">
+                    <Link to='/' id="nav-home-link">Home</Link>
+                    <label htmlFor="toggle" id="dark-mode-label">Dark Mode</label>
+                    <input type="checkbox" id="dark-mode-toggle" disabled />
+                </ul>
             </nav>
         </header>
     )

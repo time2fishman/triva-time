@@ -1,17 +1,21 @@
 #navbar {
-    border-bottom: solid #1d860d 2px;
+    border-bottom: solid #f59595 2px;
     font-size: 18px;
-    font-weight: 700;
-    padding: 1rem 0 1rem 0;
     font-family: Quicksand, sans-serif;
 }
 
-.nav-home {
-    margin: 2em;
-    text-decoration: none;
+#nav-list {
+    display: grid;
+    grid-template-columns: 3em 6em 2em;
 }
 
-#toggle {
-    vertical-align: middle;
-    margin-left: 1em;
+#nav-home-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+#dark-mode-label {
+    justify-self: end;
+    font-weight: 900;
 }

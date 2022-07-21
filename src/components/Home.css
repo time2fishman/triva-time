@@ -27,19 +27,17 @@ h1 {
 }
 
 #difficulty {
-    background-color: #f2ffe7;
     padding: 5px;
     margin: 5px;
 }
 
 #category {
-    background-color: #f2ffe7;
     padding: 5px;
     margin: 5px;
 }
 
 .play-button {
-    background-color: #74e324;
+    background-color: #f59595;
     padding: 5px 75px 5px 75px;
     margin: 10px;
 }

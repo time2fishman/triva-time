@@ -9,13 +9,13 @@ function App() {
   const [category, setCategory] = useState()
 
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home difficulty={difficulty} setDifficulty={setDifficulty} category={category} setCategory={setCategory} />} />
         <Route path='/play' element={<Play difficulty={difficulty} category={category} />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
