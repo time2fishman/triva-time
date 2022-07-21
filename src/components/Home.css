@@ -1,43 +1,54 @@
-main {
-    /* background-color: #caf5ab; */
-    font-family: Quicksand, sans-serif;
-    text-align: center;
-}
-
 .logo {
     display: block;
-    margin-top: 1rem;
+    margin-top: 8%;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 50%;
 }
 
 h1 {
     font-family: Peralta, sans-serif;
     font-size: 35px;
-    text-align: center;
+    margin-top: 5%;
 }
 
 .difficulty-label {
     font-weight: 900;
+    font-size: 18px;
 }
 
 .category-label {
     font-weight: 900;
+    font-size: 18px;
 }
 
-#difficulty {
+#difficulty, #category {
     padding: 5px;
-    margin: 5px;
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px ;
+    font-family: Quicksand, sans-serif;
+    font-weight: 900;
+    background-color: #edf9e3;
+    border: solid #f59595 0.1px ;
+    cursor: pointer;
+    width: 180px;
 }
 
-#category {
-    padding: 5px;
-    margin: 5px;
+#difficulty:hover, #category:hover {
+    background-color: white;
 }
 
 .play-button {
+    cursor: pointer;
     background-color: #f59595;
-    padding: 5px 75px 5px 75px;
-    margin: 10px;
+    padding: 10px 85px 10px 85px;
+    margin: 15px;
+    border-radius: 5px 5px 5px 5px ;
+    font-size: 16px;
+    font-family: Peralta, sans-serif;
+    font-weight: 900;
+}
+
+.play-button:hover {
+    background-color: #f17d7d;
 }

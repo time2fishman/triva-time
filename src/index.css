@@ -1,6 +1,8 @@
 body,
 #root {
   height: 100vh;
-  background-color: #badb5f;
+  background-color: #a5e475;
+  font-family: Quicksand, sans-serif;
+  text-align: center;
 }
 

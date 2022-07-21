@@ -6,16 +6,25 @@
 
 #nav-list {
     display: grid;
-    grid-template-columns: 3em 6em 2em;
+    grid-template-columns: 3em 8em 2em;
 }
 
 #nav-home-link {
+    cursor: pointer;
     text-decoration: none;
     color: black;
     font-weight: 900;
 }
 
+#nav-home-link:hover {
+    color:#f59595
+}
+
 #dark-mode-label {
     justify-self: end;
     font-weight: 900;
+}
+
+#dark-mode-toggle {
+    cursor: pointer;
 }
