@@ -2,20 +2,15 @@ import './Home.css'
 import logo from '../img/TriviaLogo.png'
 import { Link } from 'react-router-dom'
 
-function Home({setDifficulty, setCategory}) {
-
+function Home({ setDifficulty, setCategory }) {
 
     function handleDifficultyChange(event) {
         setDifficulty(event.target.value)
-        // console.log(difficulty)
     }
 
     function handleCategoryChange(event) {
         setCategory(event.target.value)
-        // console.log(category)
     }
-
-
 
     return (
         <main>

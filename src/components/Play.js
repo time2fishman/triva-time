@@ -8,12 +8,8 @@ function Play({ difficulty, category }) {
 
     function handleAnswer(event) {
         setUserAnswer(event.target.value)
-        // console.log(userAnswer)
     }
 
-    // console.log(results)
-    // console.log(difficulty)
-    // console.log(category)
     function getResults() {
         const url = `https://opentdb.com/api.php?amount=1&difficulty=${difficulty}&category=${category}`
         fetch(url)
@@ -29,7 +25,6 @@ function Play({ difficulty, category }) {
         getResults()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    // console.log(aresults[1].question)
 
     if (!difficulty) {
         return <Navigate to='/' />
@@ -38,28 +33,6 @@ function Play({ difficulty, category }) {
     if (results.length === 0) {
         return <p>Loading...</p>
     }
-
-    // if (userAnswer === results[0].correct_answer) {
-    //     return (
-    //         <div className='test'>
-    //             <h2>Correct!</h2>
-    //             <button className='next-question' type='button' onClick={getResults}>Next Question</button>
-    //         </div>
-    //     )
-    // }
-
-    // if (userAnswer === results[0].incorrect_answers[0] || userAnswer === results[0].incorrect_answers[1] || userAnswer === results[0].incorrect_answers[2]) {
-    //     return (
-    //         <div className='test'>
-    //             <h2>Incorrect, better luck next time.</h2>
-    //             <button className='next-question' type='button' onClick={getResults}>Next Question</button>
-    //         </div>
-    //     )
-    // }
-
-    // console.log("loop " + i)
-    // console.log(results.length)
-    // console.log(result.incorrect_answers)
 
     return (
         <main className='question-box'>
