@@ -5,18 +5,10 @@ import { Navigate } from 'react-router-dom'
 function Play({ difficulty, category }) {
     const [results, setResults] = useState([])
     const [userAnswer, setUserAnswer] = useState()
-    const [checked, setChecked]= useState(true)
-
-    // function resetRadioState() {
-    //     setRadioState()
-    // }
 
     function handleAnswer(event) {
         setUserAnswer(event.target.value)
-        // setRadioState(event.target.value)
-        // resetRadioState()
     }
-
 
     function getResults() {
         const url = `https://opentdb.com/api.php?amount=1&difficulty=${difficulty}&category=${category}`
@@ -56,8 +48,7 @@ function Play({ difficulty, category }) {
 
                             {result.incorrect_answers.map((incorrectAnswer, i) => (
                                 <div key={`incorrectKey:${i}`} className='choice'>
-                                    <input className='answer-button'
-                                     onChange={handleAnswer} type='radio' id='incorrectAnswer' name='answer' value={incorrectAnswer} />
+                                    <input className='answer-button' onChange={handleAnswer} type='radio' id='incorrectAnswer' name='answer' value={incorrectAnswer} />
                                     <label className='answer-label' htmlFor='incorrectAnswer' dangerouslySetInnerHTML={{ __html: incorrectAnswer }}></label>
                                 </div>
                             ))}

@@ -4,10 +4,6 @@ h2 {
 }
 
 .question-box {
-    /* display: grid;
-    grid-template-columns: 1fr 20px 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 2%; */
     margin-top: 10vh;
 }
 
@@ -15,14 +11,6 @@ h2 {
     font-size: 30px;
     font-weight: 900;
 }
-
-/*
-.possible-answers {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-left: 40vw;
-} */
 
 .answer-button {
     margin-right: 10px;
