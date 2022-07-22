@@ -1,0 +1,32 @@
+h2 {
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.question-box {
+    margin-top: 10vh;
+}
+
+.question {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.answer-button {
+    margin-right: 10px;
+}
+
+.answer-label {
+    font-size: 20px;
+}
+
+.next-question {
+    cursor: pointer;
+    background-color: #f59595;
+    padding: 10px 85px 10px 85px;
+    margin: 15px;
+    border-radius: 5px 5px 5px 5px ;
+    font-size: 16px;
+    font-family: Peralta, sans-serif;
+    font-weight: 900;
+}
