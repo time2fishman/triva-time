@@ -1,21 +1,44 @@
 h2 {
-    text-align: center;
-}
-
-.test {
-    text-align: center;
-}
-
-.next-question {
-    background-color: #f2ffe7;
+    font-size: 35px;
+    font-weight: 900;
 }
 
 .question-box {
-    text-align: center;
-    margin: 10vh;
+    /* display: grid;
+    grid-template-columns: 1fr 20px 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 2%; */
+    margin-top: 10vh;
 }
 
 .question {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/*
+.possible-answers {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40vw;
+} */
+
+.answer-button {
+    margin-right: 10px;
+}
+
+.answer-label {
     font-size: 20px;
-    font-weight: 500;
+}
+
+.next-question {
+    cursor: pointer;
+    background-color: #f59595;
+    padding: 10px 85px 10px 85px;
+    margin: 15px;
+    border-radius: 5px 5px 5px 5px ;
+    font-size: 16px;
+    font-family: Peralta, sans-serif;
+    font-weight: 900;
 }
